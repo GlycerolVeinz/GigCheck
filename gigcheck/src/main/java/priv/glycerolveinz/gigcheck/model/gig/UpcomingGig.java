@@ -1,7 +1,5 @@
 package priv.glycerolveinz.gigcheck.model.gig;
 
-import java.time.ZonedDateTime;
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +16,7 @@ public class UpcomingGig {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Embedded
     private GigInfo gigInfo;
@@ -35,6 +33,4 @@ public class UpcomingGig {
     @JoinColumn(name = "venue_id")
     private Venue venue;
 
-    @Column(name = "date_time")
-    private ZonedDateTime dateTime;
 }

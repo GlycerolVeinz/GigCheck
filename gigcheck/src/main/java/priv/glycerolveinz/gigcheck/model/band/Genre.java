@@ -14,7 +14,8 @@ public enum Genre {
     FOLK_WORLD,
     METAL,
     LATIN,
-    GOSPEL_RELIGIOUS;
+    GOSPEL_RELIGIOUS,
+    OTHER;
 
     private final int id;
 
