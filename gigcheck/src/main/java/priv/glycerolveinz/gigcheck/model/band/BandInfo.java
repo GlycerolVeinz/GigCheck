@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Embeddable
 public class BandInfo {
-    @Column(name = "name", unique = true)
+    @Column(name = "band_name", unique = true)
     private String name;
 
     @Enumerated(EnumType.STRING)

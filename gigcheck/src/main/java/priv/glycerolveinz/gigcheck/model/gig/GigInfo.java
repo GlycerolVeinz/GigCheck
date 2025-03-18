@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Embeddable
 public class GigInfo {
-    @Column(name = "name")
+    @Column(name = "gig_name")
     private String name;
 
 }

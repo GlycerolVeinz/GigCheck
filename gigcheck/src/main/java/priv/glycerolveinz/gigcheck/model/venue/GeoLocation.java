@@ -23,7 +23,4 @@ public class GeoLocation {
 
     @Column(name = "house_number")
     private String houseNumber;
-
-    @OneToMany(mappedBy = "geoLocation")
-    private Set<Venue> venues;
 }
