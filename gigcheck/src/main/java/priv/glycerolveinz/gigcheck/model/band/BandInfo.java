@@ -16,4 +16,8 @@ public class BandInfo {
     @Column(name = "description")
     private String description;
 
+    @Override
+    public String toString() {
+        return "Band \"%s\" (%s), contact: %s, \"%s\"".formatted(name, genre, email, description);
+    }
 }

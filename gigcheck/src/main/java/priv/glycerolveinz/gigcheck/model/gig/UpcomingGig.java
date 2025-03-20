@@ -13,7 +13,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class UpcomingGig {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -15,4 +15,9 @@ public class VenueInfo {
 
     @Embedded
     private GeoLocation geoLocation;
+
+    @Override
+    public String toString() {
+        return "Venue \"%s\", at %s".formatted(name, geoLocation);
+    }
 }

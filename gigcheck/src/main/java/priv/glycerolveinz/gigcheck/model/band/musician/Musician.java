@@ -1,8 +1,7 @@
 package priv.glycerolveinz.gigcheck.model.band.musician;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import priv.glycerolveinz.gigcheck.model.band.Band;
 
 import java.util.Map;
@@ -30,3 +29,4 @@ public class Musician {
     @ManyToMany(mappedBy = "members")
     private Set<Band> bands;
 }
+
