@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import priv.glycerolveinz.gigcheck.model.band.musician.Musician;
-import priv.glycerolveinz.gigcheck.model.gig.UpcomingGig;
+import priv.glycerolveinz.gigcheck.model.gig.Gig;
 
 import java.util.Set;
 
@@ -29,5 +29,5 @@ public class Band {
     private Set<Musician> members;
 
     @ManyToMany(mappedBy = "attendingBands")
-    private Set<UpcomingGig> upcomingGigs;
+    private Set<Gig> gigs;
 }

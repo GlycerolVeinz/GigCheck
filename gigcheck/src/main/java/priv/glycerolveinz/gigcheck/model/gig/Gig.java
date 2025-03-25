@@ -12,7 +12,7 @@ import java.util.Set;
 @Table(name = "upcoming_gigs")
 @Getter
 @Setter
-public class UpcomingGig {
+public class Gig {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

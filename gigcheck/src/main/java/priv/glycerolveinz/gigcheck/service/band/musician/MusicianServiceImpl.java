@@ -3,6 +3,7 @@ package priv.glycerolveinz.gigcheck.service.band.musician;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
+import priv.glycerolveinz.gigcheck.model.band.Band;
 import priv.glycerolveinz.gigcheck.model.band.musician.Instrument;
 import priv.glycerolveinz.gigcheck.model.band.musician.Musician;
 import priv.glycerolveinz.gigcheck.model.band.musician.MusicianInfo;

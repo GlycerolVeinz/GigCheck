@@ -18,4 +18,9 @@ public enum Instrument {
     Instrument(){
         this.id = this.ordinal();
     }
+
+    @Override
+    public String toString() {
+        return "Instrument{%s}".formatted(this.name());
+    }
 }

@@ -3,7 +3,7 @@ package priv.glycerolveinz.gigcheck.model.venue;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import priv.glycerolveinz.gigcheck.model.gig.UpcomingGig;
+import priv.glycerolveinz.gigcheck.model.gig.Gig;
 
 import java.util.Set;
 
@@ -21,5 +21,5 @@ public class Venue {
 
     @OneToMany
     @JoinColumn(name = "upcoming_gig_id")
-    private Set<UpcomingGig> upcomingGigs;
+    private Set<Gig> gigs;
 }

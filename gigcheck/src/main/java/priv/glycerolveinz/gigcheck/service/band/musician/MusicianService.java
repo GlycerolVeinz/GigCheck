@@ -1,5 +1,6 @@
 package priv.glycerolveinz.gigcheck.service.band.musician;
 
+import priv.glycerolveinz.gigcheck.model.band.Band;
 import priv.glycerolveinz.gigcheck.model.band.musician.Instrument;
 import priv.glycerolveinz.gigcheck.model.band.musician.Musician;
 import priv.glycerolveinz.gigcheck.model.band.musician.MusicianInfo;

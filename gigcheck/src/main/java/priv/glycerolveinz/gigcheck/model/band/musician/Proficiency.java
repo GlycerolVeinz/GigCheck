@@ -12,4 +12,9 @@ public enum Proficiency {
     Proficiency(){
         this.id = this.ordinal();
     }
+
+    @Override
+    public String toString() {
+        return "Proficiency{%s}".formatted(this.name());
+    }
 }

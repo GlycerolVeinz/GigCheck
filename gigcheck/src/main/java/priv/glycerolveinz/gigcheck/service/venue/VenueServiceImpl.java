@@ -1,6 +1,5 @@
 package priv.glycerolveinz.gigcheck.service.venue;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -28,13 +27,13 @@ public class VenueServiceImpl extends AbstractBasicService<Venue, Integer> imple
 
     @Override
     public Venue addUpcomingGig(Venue venue, Integer gigId) {
-        venue.getUpcomingGigs().add(gigService.findById(Long.valueOf(gigId)));
+        venue.getGigs().add(gigService.findById(Long.valueOf(gigId)));
         return save(venue);
     }
 
     @Override
     public Venue removeUpcomingGig(Venue venue, Integer gigId) {
-        venue.getUpcomingGigs().removeIf(gig -> gig.getId().equals(Long.valueOf(gigId)));
+        venue.getGigs().removeIf(gig -> gig.getId().equals(Long.valueOf(gigId)));
         return save(venue);
     }
 

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import priv.glycerolveinz.gigcheck.model.band.Band;
 import priv.glycerolveinz.gigcheck.model.gig.GigInfo;
 import priv.glycerolveinz.gigcheck.model.gig.GigRecord;
-import priv.glycerolveinz.gigcheck.model.gig.UpcomingGig;
+import priv.glycerolveinz.gigcheck.model.gig.Gig;
 import priv.glycerolveinz.gigcheck.repository.gig.GigRecordRepository;
 import priv.glycerolveinz.gigcheck.repository.gig.GigRepository;
 import priv.glycerolveinz.gigcheck.service.band.BandService;
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Transactional
 @Service
-public class GigServiceImplementation extends AbstractBasicService<UpcomingGig, Long>
+public class GigServiceImplementation extends AbstractBasicService<Gig, Long>
         implements GigService {
     private final GigRepository gigRepository;
     private final GigRecordRepository gigRecordRepository;
@@ -29,24 +29,24 @@ public class GigServiceImplementation extends AbstractBasicService<UpcomingGig, 
     }
 
     @Override
-    protected JpaRepository<UpcomingGig, Long> getRepository() {
+    protected JpaRepository<Gig, Long> getRepository() {
         return this.gigRepository;
     }
 
     @Override
-    public UpcomingGig addBandToGig(UpcomingGig gig, Integer bandId) {
+    public Gig addBandToGig(Gig gig, Integer bandId) {
         gig.getAttendingBands().add(bandService.findById(bandId));
         return save(gig);
     }
 
     @Override
-    public UpcomingGig removeBandFromGig(UpcomingGig gig, Integer bandId) {
+    public Gig removeBandFromGig(Gig gig, Integer bandId) {
         gig.getAttendingBands().removeIf(band -> band.getId().equals(bandId));
         return save(gig);
     }
 
     @Override
-    public GigRecord finishGigAndMakeRecord(UpcomingGig gig) {
+    public GigRecord finishGigAndMakeRecord(Gig gig) {
         GigRecord record = new GigRecord(
                 gig.getGigInfo(),
                 gig.getVenue().getVenueInfo(),
@@ -56,8 +56,8 @@ public class GigServiceImplementation extends AbstractBasicService<UpcomingGig, 
     }
 
     @Override
-    public UpcomingGig createNewGig(GigInfo gigInfo) {
-        UpcomingGig gig = new UpcomingGig();
+    public Gig createNewGig(GigInfo gigInfo) {
+        Gig gig = new Gig();
         gig.setGigInfo(gigInfo);
 
         return save(gig);

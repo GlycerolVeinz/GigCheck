@@ -2,8 +2,6 @@ package priv.glycerolveinz.gigcheck.model.venue;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
-
 @Embeddable
 public class GeoLocation {
     @Column(name = "latitude")

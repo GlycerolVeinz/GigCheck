@@ -22,4 +22,9 @@ public enum Genre {
     Genre(){
         this.id = this.ordinal();
     }
+
+    @Override
+    public String toString() {
+        return "Genre{%s}".formatted(this.name());
+    }
 }
